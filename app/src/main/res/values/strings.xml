@@ -10,4 +10,34 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="action_confirmar">Confirmar</string>
+    <string name="action_cancelar">Cancelar</string>
+    <string name="action_delete">Excluir</string>
+    <string name="action_edit">Alterar</string>
+    <string name="action_help">Ajuda</string>
+    <string name="action_new">Novo</string>
+    <string name="action_add_product">Adicionar Produto</string>
+    <string name="action_go_back">Voltar</string>
+
+    <string name="hint_email">Informe o email</string>
+    <string name="hint_secret">Informe a senha</string>
+    <string name="hint_new_secret">Informe a nova senha</string>
+    <string name="hint_new_client">Informe o nome do Cliente</string>
+    <string name="hint_new_telephone">Informe o Telefone</string>
+    <string name="hint_quantity">Informe a quantidade</string>
+
+    <string name="signupregister">Registre-se</string>
+    <string name="sair_do_app">Sair do app</string>
+    <string name="logout">Desconectar do app</string>
+    <string name="login_google">Login com Google</string>
+    <string name="login_email">Login com e-mail</string>
+    <string name="signup">Não tem uma conta?</string>
+    <string name="forgotpassword">Esqueci a senha</string>
+    <string name="recoverforgotpassword">Recuperar a senha</string>
+    <string name="login_facebook">Login com Facebook</string>
+    <string name="msg_error_authentication_failure">Autenticação falhou!</string>
+    <string name="msg_error_session_expired">Sessão expirada!</string>
+    <string name="msg_error_email_exist_google">Esse endereço de email já foi utilizado para se conectar no app com o Google</string>
+
 </resources>
