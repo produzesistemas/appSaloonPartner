@@ -26,7 +26,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
+//    private lateinit var binding: ActivityMainBinding
     private lateinit var viewModelMain: ViewModelMain
 
     override fun onCreate(savedInstanceState: Bundle?) {
