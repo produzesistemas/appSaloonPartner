@@ -1,5 +1,6 @@
 package com.produzesistemas.appsaloonpartner
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
 //    private lateinit var binding: ActivityMainBinding
     private lateinit var viewModelMain: ViewModelMain
+    private var datasource: DataSourceUser? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +47,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home), drawerLayout)
             setupActionBarWithNavController(navController, appBarConfiguration)
             navView.setupWithNavController(navController)
+
+            datasource = DataSourceUser(this)
+            var token = datasource?.get()!!
+            if (token.token == "") {
+                changeActivity()
+                finish()
+            }
 
             viewModelMain = ViewModelProvider(this).get(ViewModelMain::class.java)
             viewModelMain.title.observe(this, Observer {
@@ -65,5 +74,20 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    private fun changeActivity() {
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
+    }
+
+    private fun signOut() {
+        datasource?.deleteAll()
+        onBackPressed()
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
+
+    override fun onBackPressed() {
+        finishAffinity()
     }
 }
