@@ -40,4 +40,45 @@
     <string name="msg_error_session_expired">Sessão expirada!</string>
     <string name="msg_error_email_exist_google">Esse endereço de email já foi utilizado para se conectar no app com o Google</string>
 
+    <string name="error_400">Falha na tentativa!</string>
+    <string name="error_503">Aplicativo fora do ar. Aguarde o retorno!</string>
+
+    <string name="validation_connection">Dispositivo sem internet.</string>
+
+    <string-array name="ArrayPayment">
+        <item>1,Dinheiro</item>
+        <item>2,Cartão de Crédito</item>
+        <item>3,Cartão de Débito</item>
+        <item>4,Boleto bancário</item>
+        <item>5,Cheque</item>
+        <item>6,Pix</item>
+        <item>7,30 dias</item>
+        <item>8,30/60 dias</item>
+        <item>9,30/60/90 dias</item>
+        <item>10,30/60/90/120 dias</item>
+        <item>11,Transferência bancária</item>
+    </string-array>
+
+    <string-array name="ArrayStatus">
+        <item>1,A receber</item>
+        <item>2,Recebida</item>
+    </string-array>
+
+    <string-array name="Graphics">
+        <item>Top 5 produtos + vendidos</item>
+        <item>Serviços por mês e ano</item>
+        <item>Faturamento por mês e ano</item>
+        <item>Lucros por mês e ano</item>
+    </string-array>
+
+    <string-array name="Menu_Main">
+        <item>Clientes</item>
+        <item>Produtos</item>
+        <item>Vendas</item>
+        <item>Contas a receber/recebidas</item>
+        <item>Gráficos</item>
+    </string-array>
+
+    <string name="validation_login">Informe o e-mail e senha!</string>
+
 </resources>
