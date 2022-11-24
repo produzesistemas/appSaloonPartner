@@ -20,7 +20,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.produzesistemas.appsaloonpartner.database.DataSourceUser
-import com.produzesistemas.appsaloonpartner.databinding.ActivityMainBinding
+//import com.produzesistemas.appsaloonpartner.databinding.ActivityMainBinding
 import com.produzesistemas.appsaloonpartner.viewmodel.ViewModelMain
 import de.hdodenhof.circleimageview.CircleImageView
 
