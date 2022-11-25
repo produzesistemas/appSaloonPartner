@@ -48,6 +48,17 @@ class MainActivity : AppCompatActivity() {
             setupActionBarWithNavController(navController, appBarConfiguration)
             navView.setupWithNavController(navController)
 
+
+            navView.menu.findItem(R.id.navigation_logout).setOnMenuItemClickListener {
+                signOut()
+                true
+            }
+
+            navView.menu.findItem(R.id.navigation_sair_do_app).setOnMenuItemClickListener {
+                onBackPressed()
+                true
+            }
+
             datasource = DataSourceUser(this)
             var token = datasource?.get()!!
             if (token.token == "") {

@@ -54,6 +54,11 @@
         <item name="android:background">@drawable/custom_button_gray_light</item>
     </style>
 
+    <style name="ButtonBackgroundWhite">
+        <item name="android:background">@drawable/custom_button_white</item>
+    </style>
+
+
     <style name="ButtonBlue">
         <item name="android:background">@drawable/custom_button_blue</item>
     </style>

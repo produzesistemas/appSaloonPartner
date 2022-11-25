@@ -157,7 +157,7 @@
                     app:cardElevation="0dp">
 
                     <LinearLayout
-                        style="@style/ButtonGrayLight"
+                        style="@style/ButtonBackgroundWhite"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal"
@@ -200,7 +200,7 @@
                     app:cardElevation="0dp">
 
                     <LinearLayout
-                        style="@style/ButtonGrayLight"
+                        style="@style/ButtonBackgroundWhite"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_horizontal"
@@ -352,7 +352,7 @@
                 app:cardElevation="0dp">
 
                 <LinearLayout
-                    style="@style/ButtonGrayLight"
+                    style="@style/ButtonBackgroundWhite"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
@@ -504,7 +504,7 @@
                 app:cardElevation="0dp">
 
                 <LinearLayout
-                    style="@style/ButtonGrayLight"
+                    style="@style/ButtonBackgroundWhite"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_horizontal"
