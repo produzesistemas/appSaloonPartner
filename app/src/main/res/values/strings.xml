@@ -21,11 +21,19 @@
     <string name="action_go_back">Voltar</string>
 
     <string name="hint_email">Informe o email</string>
+    <string name="hint_name">Informe o nome do estabelecimento</string>
+    <string name="hint_responsable">Informe o nome do responsável</string>
+    <string name="hint_adress">Informe o endereço do estabelecimento</string>
+    <string name="hint_telephone">Informe o Telefone do estabelecimento</string>
+    <string name="hint_cnpj">Informe o CNPJ</string>
     <string name="hint_secret">Informe a senha</string>
     <string name="hint_new_secret">Informe a nova senha</string>
     <string name="hint_new_client">Informe o nome do Cliente</string>
     <string name="hint_new_telephone">Informe o Telefone</string>
     <string name="hint_quantity">Informe a quantidade</string>
+
+    <string name="label_select_type">Selecione o tipo</string>
+
 
     <string name="signupregister">Registre-se</string>
     <string name="sair_do_app">Sair do app</string>

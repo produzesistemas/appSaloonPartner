@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     android:id="@+id/view">
 
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,6 +23,7 @@
         android:padding="@dimen/fab_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view">
+
 
         <ImageView
             android:layout_width="100dp"
@@ -34,7 +45,9 @@
             <LinearLayout
                 android:id="@+id/linearLayoutLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -227,8 +240,167 @@
             android:id="@+id/linearLayoutRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+
             android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ConstraintLayoutSpinnerPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutSpinnerClient">
+
+                <TextView
+                    android:id="@+id/textViewPayment"
+                    style="@style/TextStyleTitleActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:text="@string/label_select_type"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewPayment">
+
+                    <Spinner
+                        android:id="@+id/spinnerFormPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/custom_spinner_default">
+
+                    </Spinner>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_baseline_expand_more_24" />
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:textColorHint="@color/black"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp">
+
+                <EditText
+                    android:id="@+id/editTextNameRegister"
+                    android:hint="@string/hint_name"
+                    style="@style/SearchViewStyle"
+                    android:background="@drawable/custom_background_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="255"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:textColorHint="@color/black"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp">
+
+                <EditText
+                    android:id="@+id/editTextResponsableRegister"
+                    android:hint="@string/hint_responsable"
+                    style="@style/SearchViewStyle"
+                    android:background="@drawable/custom_background_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="255"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:textColorHint="@color/black"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp">
+
+                <EditText
+                    android:id="@+id/editTextAdressRegister"
+                    android:hint="@string/hint_adress"
+                    style="@style/SearchViewStyle"
+                    android:background="@drawable/custom_background_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="255"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:textColorHint="@color/black"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp">
+
+                <EditText
+                    android:id="@+id/editTextTelephoneRegister"
+                    android:hint="@string/hint_telephone"
+                    style="@style/SearchViewStyle"
+                    android:background="@drawable/custom_background_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="255"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/margin_default"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_default"
+                android:textColorHint="@color/black"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp">
+
+                <EditText
+                    android:id="@+id/editTextCnpjRegister"
+                    android:hint="@string/hint_cnpj"
+                    style="@style/SearchViewStyle"
+                    android:background="@drawable/custom_background_search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="255"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/inputLayoutRegister"
@@ -528,6 +700,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
