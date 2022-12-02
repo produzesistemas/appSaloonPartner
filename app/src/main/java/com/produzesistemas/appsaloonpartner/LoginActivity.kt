@@ -1,13 +1,16 @@
 package com.produzesistemas.appsaloonpartner
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.produzesistemas.appsaloonpartner.database.DataSourceUser
 import com.produzesistemas.appsaloonpartner.databinding.ActivityLoginBinding
+import com.produzesistemas.appsaloonpartner.model.Type
 import com.produzesistemas.appsaloonpartner.utils.MainUtils
 import com.produzesistemas.appsaloonpartner.viewmodel.LoginViewModel
 
@@ -15,12 +18,14 @@ class LoginActivity : AppCompatActivity(){
     private var datasource: DataSourceUser? = null
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModelLogin: LoginViewModel
+    private var types: MutableList<Type> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         datasource = DataSourceUser(this)
+        loadTypes(this)
         var token = datasource?.get()!!
         if (token.token != "") {
             changeActivity()
@@ -158,6 +163,25 @@ class LoginActivity : AppCompatActivity(){
 
     override fun onStart() {
         super.onStart()
+    }
+
+    private fun loadTypes(context: Context) {
+        val res = resources
+        val forms = res.getStringArray(R.array.ArrayType)
+        forms.forEach {
+            val s = it.split(",")
+            val form = Type()
+            form.id = s[0].toInt()
+            form.description = s[1]
+            types.add(form)
+        }
+        val adapterPaymentCondition: ArrayAdapter<Type>? = context?.let { ArrayAdapter<Type>(
+            it,
+            android.R.layout.simple_spinner_dropdown_item,
+            types
+        ) }
+        adapterPaymentCondition?.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.spinnerType.adapter = adapterPaymentCondition
     }
 
 

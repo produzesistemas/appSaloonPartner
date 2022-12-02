@@ -254,27 +254,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ConstraintLayoutSpinnerClient">
 
-                <TextView
-                    android:id="@+id/textViewPayment"
-                    style="@style/TextStyleTitleActivity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/margin_default"
-                    android:text="@string/label_select_type"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textViewPayment">
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <Spinner
-                        android:id="@+id/spinnerFormPayment"
+                        android:id="@+id/spinnerType"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:layout_marginTop="@dimen/margin_default"
                         android:background="@drawable/custom_spinner_default">
 
                     </Spinner>
