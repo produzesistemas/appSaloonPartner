@@ -2,9 +2,14 @@ package com.produzesistemas.appsaloonpartner
 
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
@@ -13,11 +18,15 @@ import com.produzesistemas.appsaloonpartner.databinding.ActivityLoginBinding
 import com.produzesistemas.appsaloonpartner.model.Type
 import com.produzesistemas.appsaloonpartner.utils.MainUtils
 import com.produzesistemas.appsaloonpartner.viewmodel.LoginViewModel
+import java.io.IOException
+
 
 class LoginActivity : AppCompatActivity(){
     private var datasource: DataSourceUser? = null
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModelLogin: LoginViewModel
+    private val pickImage = 100
+    private var imageUri: Uri? = null
     private var types: MutableList<Type> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -159,6 +168,10 @@ class LoginActivity : AppCompatActivity(){
             )
         }
 
+        binding.profileImage.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+        }
     }
 
     override fun onStart() {
@@ -211,4 +224,11 @@ class LoginActivity : AppCompatActivity(){
         finish()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data
+            binding.profileImage.setImageURI(imageUri)
+        }
+    }
 }

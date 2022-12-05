@@ -27,6 +27,7 @@
     <string name="hint_telephone">Informe o Telefone do estabelecimento</string>
     <string name="hint_cnpj">Informe o CNPJ</string>
     <string name="hint_secret">Informe a senha</string>
+    <string name="hint_confirm_secret">Confirme a senha</string>
     <string name="hint_new_secret">Informe a nova senha</string>
     <string name="hint_new_client">Informe o nome do Cliente</string>
     <string name="hint_new_telephone">Informe o Telefone</string>
