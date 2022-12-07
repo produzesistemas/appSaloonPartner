@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity(){
         }
 
         binding.cardViewSignUp.setOnClickListener{
-            binding.linearLayoutRegister.visibility = View.VISIBLE
+            binding.scrollView.visibility = View.VISIBLE
             binding.linearLayoutLogin.visibility = View.GONE
            }
 
