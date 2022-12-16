@@ -71,16 +71,30 @@ class LoginActivity : AppCompatActivity(){
 
         binding.cardViewRegister.setOnClickListener{
             if (this?.let { it1 -> MainUtils.isOnline(it1) }!!) {
+                if (binding.editTextEstablishment.text.toString() == "") {
+                    MainUtils.snackInTop(
+                        it,
+                        this.resources.getString(R.string.validation_establishment),
+                        Snackbar.LENGTH_LONG
+                    )
+                    return@setOnClickListener
+                }
+
                 if ((binding.editTextEmailRegister.text.toString() == "") || (binding.editTextSecretRegister.text.toString() == "")) {
                     MainUtils.snackInTop(
                         it,
                         this.resources.getString(R.string.validation_login),
                         Snackbar.LENGTH_LONG
                     )
-                } else {
-                    onRegister(binding.editTextEmailRegister.text.toString(), binding.editTextSecretRegister.text.toString())
+                    return@setOnClickListener
+
                 }
-            } else {
+
+
+                    onRegister(binding.editTextEmailRegister.text.toString(), binding.editTextSecretRegister.text.toString())
+
+            }
+            else {
                 MainUtils.snackInTop(it, this.resources.getString(R.string.validation_connection), Snackbar.LENGTH_LONG)
             }
         }

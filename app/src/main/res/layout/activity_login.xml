@@ -406,6 +406,18 @@
                     app:civ_border_color="@color/white"
                     app:civ_border_width="1dp" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ConstraintLayoutSpinnerPayment"
                     android:layout_width="match_parent"
@@ -447,6 +459,18 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/establishment"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -454,12 +478,12 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
                     <EditText
-                        android:id="@+id/editTextNameRegister"
+                        android:id="@+id/editTextEstablishment"
                         style="@style/SearchViewStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -469,6 +493,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/responsable"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -476,7 +512,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
@@ -491,6 +527,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/establishment_adress"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -498,7 +546,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
@@ -513,6 +561,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/establishment_telephone"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -520,7 +580,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
@@ -535,6 +595,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cnpj"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -542,7 +614,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
@@ -557,6 +629,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/inputLayoutRegister"
                     android:layout_width="match_parent"
@@ -565,7 +649,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
@@ -581,6 +665,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/secret"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/inputLayoutSecretRegister"
                     android:layout_width="match_parent"
@@ -589,7 +685,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 
@@ -605,6 +701,18 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/secret_confirm"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutConfirm"
                     android:layout_width="match_parent"
@@ -613,7 +721,7 @@
                     android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="@dimen/margin_default"
-                    android:textColorHint="@color/black"
+                    android:textColorHint="@color/gray"
                     app:boxStrokeWidth="0dp"
                     app:boxStrokeWidthFocused="0dp">
 

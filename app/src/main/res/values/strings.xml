@@ -20,6 +20,16 @@
     <string name="action_add_product">Adicionar Produto</string>
     <string name="action_go_back">Voltar</string>
 
+    <string name="establishment">Nome do estabelecimento</string>
+    <string name="responsable">Nome do responsável</string>
+    <string name="establishment_adress">Endereço do estabelecimento</string>
+    <string name="establishment_telephone">Telefone do estabelecimento</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="email">Email</string>
+    <string name="secret">Senha</string>
+    <string name="secret_confirm">Confirme a senha</string>
+    <string name="type">Selecione o tipo</string>
+
     <string name="hint_email">Informe o email</string>
     <string name="hint_name">Informe o nome do estabelecimento</string>
     <string name="hint_responsable">Informe o nome do responsável</string>
@@ -53,6 +63,9 @@
     <string name="error_503">Aplicativo fora do ar. Aguarde o retorno!</string>
 
     <string name="validation_connection">Dispositivo sem internet.</string>
+    <string name="validation_establishment">Informe o nome do estabelecimento.</string>
+    <string name="validation_secret_compare">As senhas não conferem.</string>
+
 
     <string-array name="ArrayPayment">
         <item>1,Dinheiro</item>
