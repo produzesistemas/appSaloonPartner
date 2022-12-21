@@ -25,8 +25,9 @@
     <string name="establishment_adress">Endereço do estabelecimento</string>
     <string name="establishment_telephone">Telefone do estabelecimento</string>
     <string name="cnpj">CNPJ</string>
-    <string name="email">Email</string>
-    <string name="secret">Senha</string>
+    <string name="email">Email :</string>
+    <string name="secret">Senha :</string>
+    <string name="new_secret">Nova senha :</string>
     <string name="secret_confirm">Confirme a senha</string>
     <string name="type">Selecione o tipo</string>
 
@@ -65,6 +66,7 @@
     <string name="validation_connection">Dispositivo sem internet.</string>
     <string name="validation_establishment">Informe o nome do estabelecimento.</string>
     <string name="validation_secret_compare">As senhas não conferem.</string>
+    <string name="validation_type">Obrigatório selecionar o tipo de estabelecimento.</string>
 
 
     <string-array name="ArrayPayment">

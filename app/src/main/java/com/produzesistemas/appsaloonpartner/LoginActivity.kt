@@ -71,12 +71,18 @@ class LoginActivity : AppCompatActivity(){
 
         binding.cardViewRegister.setOnClickListener{
             if (this?.let { it1 -> MainUtils.isOnline(it1) }!!) {
+
+                if (binding.spinnerType.selectedItem == null) {
+                     MainUtils.snackInTop(
+                            it,
+                            this.resources.getString(R.string.validation_type),
+                            Snackbar.LENGTH_LONG)
+
+                    return@setOnClickListener
+                }
+
                 if (binding.editTextEstablishment.text.toString() == "") {
-                    MainUtils.snackInTop(
-                        it,
-                        this.resources.getString(R.string.validation_establishment),
-                        Snackbar.LENGTH_LONG
-                    )
+                    MainUtils.snackInTop(it,this.resources.getString(R.string.validation_establishment),Snackbar.LENGTH_LONG)
                     return@setOnClickListener
                 }
 
@@ -90,8 +96,21 @@ class LoginActivity : AppCompatActivity(){
 
                 }
 
+                if (binding.editTextSecretRegister.text.toString() != binding.editTextConfirmSecret.text.toString() )  {
+                    MainUtils.snackInTop(
+                        it,
+                        this.resources.getString(R.string.validation_secret_compare),
+                        Snackbar.LENGTH_LONG
+                    )
+                    return@setOnClickListener
 
-                    onRegister(binding.editTextEmailRegister.text.toString(), binding.editTextSecretRegister.text.toString())
+                }
+
+
+
+/*
+                onRegister(binding.editTextEmailRegister.text.toString(), binding.editTextSecretRegister.text.toString())
+*/
 
             }
             else {

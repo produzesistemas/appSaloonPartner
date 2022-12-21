@@ -23,6 +23,18 @@
             android:layout_marginBottom="@dimen/fab_margin"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:textColor="@color/black"
+            />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayout"
             android:layout_width="match_parent"
@@ -46,6 +58,19 @@
                 android:maxLength="255" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/secret"
+            android:textSize="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:textColor="@color/black"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayoutSecret"
@@ -225,6 +250,18 @@
             android:layout_marginBottom="@dimen/fab_margin"
             app:srcCompat="@mipmap/ic_launcher_round" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:textColor="@color/black"
+            />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayoutForgot"
             android:layout_width="match_parent"
@@ -248,6 +285,18 @@
                 android:maxLength="255" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_secret"
+            android:textSize="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:textColor="@color/black"
+            />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayoutSecretForgot"
@@ -442,7 +491,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginTop="@dimen/margin_default"
-                            android:background="@drawable/custom_spinner_default">
+                            android:background="@drawable/custom_spinner_default"
+                            android:spinnerMode="dropdown">
 
                         </Spinner>
 
