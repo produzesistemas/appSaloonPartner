@@ -106,7 +106,6 @@
     <string name="validation_login">Informe o e-mail e senha!</string>
 
     <string-array name="ArrayType">
-        <item>0,Selecione o tipo</item>
         <item>1,Barbearia</item>
         <item>2,Clínica de Estética</item>
         <item>3,Clínica de Podologia</item>
