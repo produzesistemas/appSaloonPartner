@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.produzesistemas.appsaloonpartner.database.DataSourceUser
 import com.produzesistemas.appsaloonpartner.databinding.ActivityLoginBinding
+import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.Type
 import com.produzesistemas.appsaloonpartner.utils.MainUtils
 import com.produzesistemas.appsaloonpartner.viewmodel.LoginViewModel
@@ -25,6 +27,8 @@ class LoginActivity : AppCompatActivity(){
     private var datasource: DataSourceUser? = null
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModelLogin: LoginViewModel
+    private lateinit var type: Type
+    private lateinit var register: Register
     private val pickImage = 100
     private var imageUri: Uri? = null
     private var types: MutableList<Type> = ArrayList()
@@ -41,6 +45,22 @@ class LoginActivity : AppCompatActivity(){
             finish()
         }
         viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
+
+        binding.spinnerType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parentView: AdapterView<*>?,
+                selectedItemView: View?,
+                position: Int,
+                id: Long
+            ) {
+                type = binding.spinnerType.selectedItem as Type
+            }
+
+            override fun onNothingSelected(parentView: AdapterView<*>?) {
+
+            }
+        }
+
         binding.cardViewLogin.setOnClickListener{
 
             if (this?.let { it1 -> MainUtils.isOnline(it1) }!!) {
@@ -96,6 +116,18 @@ class LoginActivity : AppCompatActivity(){
                     return@setOnClickListener
 
                 }
+
+                register = Register()
+                register.email = binding.editTextEmailRegister.text.toString()
+                register.secret = binding.editTextSecretRegister.text.toString()
+                register.cnpj = binding.editTextCnpjRegister.text.toString()
+                register.responsible = binding.editTextResponsableRegister.text.toString()
+                register.address = binding.editTextAdressRegister.text.toString()
+                register.establishmentName = binding.editTextEstablishment.text.toString()
+                register.telephone =  binding.editTextTelephoneRegister.text.toString()
+                register.appName = "AppSaloon"
+                register.idType = type.id
+                Log.d("appSaloon",register.toString())
 
 
 
