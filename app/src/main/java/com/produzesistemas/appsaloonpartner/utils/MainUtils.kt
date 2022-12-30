@@ -1,21 +1,26 @@
 package com.produzesistemas.appsaloonpartner.utils
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.util.Base64.URL_SAFE
-import android.util.Base64.decode
+import android.util.Base64
 import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
 import com.google.android.material.snackbar.Snackbar
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.lang.ref.WeakReference
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 object MainUtils {
 
+    const val IMAGE_QUALITY = 25
 
 
     val currentDate: Date
@@ -121,6 +126,22 @@ object MainUtils {
         params.gravity = Gravity.TOP
         viewS.layoutParams = params
         snack.show()
+    }
+
+    fun EncodeImageFileTobase64(_file: File): String? {
+        val bitmap = BitmapFactory.decodeFile(_file.absolutePath)
+        //_file.delete();
+        val fotoBitmap = WeakReference(bitmap)
+        val baos = ByteArrayOutputStream()
+        fotoBitmap.get()!!.compress(Bitmap.CompressFormat.JPEG, IMAGE_QUALITY, baos)
+        return Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT)
+    }
+
+    fun EncodeImagemTobase64(image: Bitmap): String? {
+        val baos = ByteArrayOutputStream()
+        image.compress(Bitmap.CompressFormat.PNG, 100, baos)
+        val b = baos.toByteArray()
+        return Base64.encodeToString(b, Base64.DEFAULT)
     }
 
 

@@ -2,7 +2,8 @@ package com.produzesistemas.appsaloonpartner
 
 import android.content.Context
 import android.content.Intent
-import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -10,7 +11,6 @@ import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
@@ -19,8 +19,8 @@ import com.produzesistemas.appsaloonpartner.databinding.ActivityLoginBinding
 import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.Type
 import com.produzesistemas.appsaloonpartner.utils.MainUtils
+import com.produzesistemas.appsaloonpartner.utils.Mask
 import com.produzesistemas.appsaloonpartner.viewmodel.LoginViewModel
-import java.io.IOException
 
 
 class LoginActivity : AppCompatActivity(){
@@ -45,6 +45,9 @@ class LoginActivity : AppCompatActivity(){
             finish()
         }
         viewModelLogin = ViewModelProvider(this).get(LoginViewModel::class.java)
+        binding.editTextTelephoneRegister.addTextChangedListener(Mask.insert("(##)#####-####", binding.editTextTelephoneRegister))
+        binding.editTextCnpjRegister.addTextChangedListener(Mask.insert("##.###.###.####/##", binding.editTextCnpjRegister))
+
 
         binding.spinnerType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -127,6 +130,8 @@ class LoginActivity : AppCompatActivity(){
                 register.telephone =  binding.editTextTelephoneRegister.text.toString()
                 register.appName = "AppSaloon"
                 register.idType = type.id
+                var bitmap: Bitmap? = (binding.profileImage.drawable as BitmapDrawable).bitmap
+                register.base64 = bitmap?.let { it1 -> MainUtils.EncodeImagemTobase64(it1) }.toString()
                 Log.d("appSaloon",register.toString())
 
 
