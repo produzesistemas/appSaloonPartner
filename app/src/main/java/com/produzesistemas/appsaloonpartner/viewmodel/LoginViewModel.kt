@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.ResponseBody
 import com.produzesistemas.appsaloonpartner.model.Token
 import com.produzesistemas.appsaloonpartner.repository.LoginRepository
@@ -59,10 +60,10 @@ class LoginViewModel constructor() : ViewModel() {
         }
     }
 
-    fun register(email: String, secret: String) {
+    fun register(register: Register) {
         loadingRegister.value = true
         viewModelScope.launch {
-            when (val response = loginRepository.register(email, secret)) {
+            when (val response = loginRepository.register(register)) {
                 is NetworkState.Success -> {
                     loadingRegister.value = false
                     msg.value = response.data!!

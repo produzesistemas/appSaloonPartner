@@ -1,6 +1,7 @@
 package com.produzesistemas.appsaloonpartner.retrofit
 import com.google.gson.GsonBuilder
 import com.produzesistemas.appsaloonpartner.model.LoginUser
+import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.Token
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,12 +14,12 @@ import java.util.concurrent.TimeUnit
 interface RetrofitService {
 
     @Headers("Content-Type:application/json")
-    @POST("account/loginVendasNow")
+    @POST("account/loginBeauty")
     suspend fun login(@Body loginUser: LoginUser): Response<Token>
 
     @Headers("Content-Type:application/json")
-    @POST("account/register")
-    suspend fun registerUser(@Body loginUser: LoginUser): Response<String>
+    @POST("account/registerBeauty")
+    suspend fun registerUser(@Body register: Register): Response<String>
 
     @Headers("Content-Type:application/json")
     @POST("account/recoverPassword")

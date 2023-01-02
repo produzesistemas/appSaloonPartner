@@ -6,10 +6,12 @@ data class Register(var email: String = "",
                     var cnpj: String = "",
                     var responsible: String = "",
                     var address: String = "",
-                    var establishmentName: String = "",
-                    var idType: Int = 0,
+                    var code: String = "",
+                    var userName: String = "",
+                    var description: String = "",
+                    var typeId: Int = 0,
                     var appName: String = "",
-                    var telephone: String = ""){
-    constructor():this("","","","","","","",0,"","")
+                    var phoneNumber: String = ""){
+    constructor():this("","","","","","","","","",0)
 
 }

@@ -1,6 +1,7 @@
 package com.produzesistemas.appsaloonpartner.repository
 
 import com.produzesistemas.appsaloonpartner.model.LoginUser
+import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.Token
 import com.produzesistemas.appsaloonpartner.retrofit.RetrofitService
 import com.produzesistemas.appsaloonpartner.utils.NetworkState
@@ -22,9 +23,8 @@ class LoginRepository constructor(private val retrofitService: RetrofitService) 
         }
     }
 
-    suspend fun register(email: String, secret: String) : NetworkState<String?> {
-        val loginUser = LoginUser(email, secret, "VendasNow")
-        val response = retrofitService.registerUser(loginUser)
+    suspend fun register(register: Register) : NetworkState<String?> {
+        val response = retrofitService.registerUser(register)
         return if (response.isSuccessful) {
             if (response.code() == 200) {
                 NetworkState.Success(response.body())
@@ -37,7 +37,7 @@ class LoginRepository constructor(private val retrofitService: RetrofitService) 
     }
 
     suspend fun forgot(email: String, secret: String) : NetworkState<String?> {
-        val loginUser = LoginUser(email, secret, "VendasNow")
+        val loginUser = LoginUser(email, secret, "AppBeauty")
         val response = retrofitService.forgotPassword(loginUser)
         return if (response.isSuccessful) {
             if (response.code() == 200) {

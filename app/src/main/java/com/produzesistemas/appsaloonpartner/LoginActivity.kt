@@ -126,19 +126,19 @@ class LoginActivity : AppCompatActivity(){
                 register.cnpj = binding.editTextCnpjRegister.text.toString()
                 register.responsible = binding.editTextResponsableRegister.text.toString()
                 register.address = binding.editTextAdressRegister.text.toString()
-                register.establishmentName = binding.editTextEstablishment.text.toString()
-                register.telephone =  binding.editTextTelephoneRegister.text.toString()
-                register.appName = "AppSaloon"
-                register.idType = type.id
+                register.description = binding.editTextEstablishment.text.toString()
+                register.phoneNumber =  binding.editTextTelephoneRegister.text.toString()
+                register.appName = "AppBeauty"
+                register.typeId = type.id
                 var bitmap: Bitmap? = (binding.profileImage.drawable as BitmapDrawable).bitmap
                 register.base64 = bitmap?.let { it1 -> MainUtils.EncodeImagemTobase64(it1) }.toString()
-                Log.d("appSaloon",register.toString())
+                Log.d("AppBeauty",register.toString())
 
 
 
-/*
-                onRegister(binding.editTextEmailRegister.text.toString(), binding.editTextSecretRegister.text.toString())
-*/
+
+                onRegister(register)
+
 
             }
             else {
@@ -272,8 +272,8 @@ class LoginActivity : AppCompatActivity(){
         viewModelLogin.login(email, secret)
     }
 
-    private fun onRegister(email: String, secret: String){
-        viewModelLogin.register(email, secret)
+    private fun onRegister(register: Register){
+        viewModelLogin.register(register)
     }
 
     private fun onForgot(email: String, secret: String){
