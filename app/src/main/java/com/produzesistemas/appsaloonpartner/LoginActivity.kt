@@ -92,6 +92,11 @@ class LoginActivity : AppCompatActivity(){
             binding.linearLayoutLogin.visibility = View.VISIBLE
         }
 
+        binding.cardViewImage.setOnClickListener{
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+        }
+
         binding.cardViewRegister.setOnClickListener{
             if (this?.let { it1 -> MainUtils.isOnline(it1) }!!) {
 
@@ -99,6 +104,17 @@ class LoginActivity : AppCompatActivity(){
                     MainUtils.snackInTop(it,this.resources.getString(R.string.validation_establishment),Snackbar.LENGTH_LONG)
                     return@setOnClickListener
                 }
+
+                if (binding.profileImage.drawable == null) {
+                    MainUtils.snackInTop(
+                        it,
+                        this.resources.getString(R.string.validation_image),
+                        Snackbar.LENGTH_LONG
+                    )
+                    return@setOnClickListener
+
+                }
+
 
                 if ((binding.editTextEmailRegister.text.toString() == "") || (binding.editTextSecretRegister.text.toString() == "")) {
                     MainUtils.snackInTop(
@@ -127,6 +143,8 @@ class LoginActivity : AppCompatActivity(){
                 register.responsible = binding.editTextResponsableRegister.text.toString()
                 register.address = binding.editTextAdressRegister.text.toString()
                 register.description = binding.editTextEstablishment.text.toString()
+                register.name = binding.editTextEstablishment.text.toString()
+                register.description = binding.editTextDescription.text.toString()
                 register.phoneNumber =  binding.editTextTelephoneRegister.text.toString()
                 register.appName = "AppBeauty"
                 register.typeId = type.id
@@ -229,10 +247,6 @@ class LoginActivity : AppCompatActivity(){
             )
         }
 
-        binding.profileImage.setOnClickListener {
-            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            startActivityForResult(gallery, pickImage)
-        }
     }
 
     override fun onStart() {

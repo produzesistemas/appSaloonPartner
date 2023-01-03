@@ -451,9 +451,44 @@
                     android:layout_width="76dp"
                     android:layout_height="76dp"
                     android:layout_gravity="center|center_horizontal|center_vertical"
-                    android:src="@drawable/ic_baseline_house_24"
                     app:civ_border_color="@color/white"
                     app:civ_border_width="1dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/margin_7"
+                            android:text="@string/action_go_back"
+                            android:textColor="@android:color/holo_blue_dark"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -542,6 +577,41 @@
                         android:maxLength="255" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/establishment"
+                    android:textSize="14dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColor="@color/black"
+                    />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
+                    android:textColorHint="@color/gray"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp">
+
+                    <EditText
+                        android:id="@+id/editTextDescription"
+                        style="@style/SearchViewStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/custom_background_search_view"
+                        android:hint="@string/hint_name"
+                        android:maxLength="255" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <TextView
                     android:layout_width="match_parent"

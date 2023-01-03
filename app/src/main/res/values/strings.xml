@@ -67,6 +67,7 @@
     <string name="validation_establishment">Informe o nome do estabelecimento.</string>
     <string name="validation_secret_compare">As senhas não conferem.</string>
     <string name="validation_type">Obrigatório selecionar o tipo de estabelecimento.</string>
+    <string name="validation_image">Selecione uma logomarca.</string>
 
 
     <string-array name="ArrayPayment">

@@ -9,9 +9,10 @@ data class Register(var email: String = "",
                     var code: String = "",
                     var userName: String = "",
                     var description: String = "",
+                    var name: String = "",
                     var typeId: Int = 0,
                     var appName: String = "",
                     var phoneNumber: String = ""){
-    constructor():this("","","","","","","","","",0)
+    constructor():this("","","","","","","","","","")
 
 }
