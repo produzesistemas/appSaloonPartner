@@ -19,6 +19,7 @@
     <string name="action_new">Novo</string>
     <string name="action_add_product">Adicionar Produto</string>
     <string name="action_go_back">Voltar</string>
+    <string name="action_image_select">Selecione uma logomarca</string>
 
     <string name="establishment">Nome do estabelecimento</string>
     <string name="responsable">Nome do responsável</string>
@@ -43,8 +44,10 @@
     <string name="hint_new_client">Informe o nome do Cliente</string>
     <string name="hint_new_telephone">Informe o Telefone</string>
     <string name="hint_quantity">Informe a quantidade</string>
+    <string name="hint_description_establishment">Informe a descrição do estabelecimento</string>
 
     <string name="label_select_type">Selecione o tipo</string>
+    <string name="label_description_establishment">Descrição do estabelecimento</string>
 
 
     <string name="signupregister">Registre-se</string>

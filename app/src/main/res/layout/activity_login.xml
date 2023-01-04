@@ -460,27 +460,36 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/margin_default"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="@dimen/margin_default"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
+                    app:cardElevation="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center_horizontal"
-                        android:orientation="horizontal"
+                        android:background="@android:color/holo_blue_dark"
                         android:paddingTop="15dp"
                         android:paddingBottom="15dp">
 
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="start"
+                            android:layout_marginStart="6dp"
+                            android:src="@drawable/ic_menu_camera"
+                            app:tint="@color/white" />
+
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginEnd="@dimen/margin_7"
-                            android:text="@string/action_go_back"
-                            android:textColor="@android:color/holo_blue_dark"
+                            android:text="@string/action_image_select"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
                             android:textSize="16dp" />
 
                     </LinearLayout>
@@ -581,7 +590,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/establishment"
+                    android:text="@string/label_description_establishment"
                     android:textSize="14dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="@dimen/margin_default"
@@ -607,7 +616,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/custom_background_search_view"
-                        android:hint="@string/hint_name"
+                        android:hint="@string/hint_description_establishment"
                         android:maxLength="255" />
 
                 </com.google.android.material.textfield.TextInputLayout>
