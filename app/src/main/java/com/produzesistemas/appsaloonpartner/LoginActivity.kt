@@ -28,7 +28,8 @@ class LoginActivity : AppCompatActivity(){
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModelLogin: LoginViewModel
     private lateinit var type: Type
-    private lateinit var register: Register
+    private var register: Register = Register()
+
     private val pickImage = 100
     private var imageUri: Uri? = null
     private var types: MutableList<Type> = ArrayList()
@@ -48,6 +49,17 @@ class LoginActivity : AppCompatActivity(){
         binding.editTextTelephoneRegister.addTextChangedListener(Mask.insert("(##)#####-####", binding.editTextTelephoneRegister))
         binding.editTextCnpjRegister.addTextChangedListener(Mask.insert("##.###.###.####/##", binding.editTextCnpjRegister))
 
+        binding.radioGroup.check(R.id.radioButtonNo)
+        binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.radioButtonYes -> {
+                    register.scheduling = true
+                }
+                R.id.radioButtonNo -> {
+                    register.scheduling = false
+                }
+            }
+        }
 
         binding.spinnerType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -136,7 +148,6 @@ class LoginActivity : AppCompatActivity(){
 
                 }
 
-                register = Register()
                 register.email = binding.editTextEmailRegister.text.toString()
                 register.secret = binding.editTextSecretRegister.text.toString()
                 register.cnpj = binding.editTextCnpjRegister.text.toString()
@@ -150,7 +161,7 @@ class LoginActivity : AppCompatActivity(){
                 register.typeId = type.id
                 var bitmap: Bitmap? = (binding.profileImage.drawable as BitmapDrawable).bitmap
                 register.base64 = bitmap?.let { it1 -> MainUtils.EncodeImagemTobase64(it1) }.toString()
-                Log.d("AppBeauty",register.toString())
+//                Log.d("AppBeauty",register.toString())
 
 
 

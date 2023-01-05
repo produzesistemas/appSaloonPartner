@@ -31,6 +31,7 @@
     <string name="new_secret">Nova senha :</string>
     <string name="secret_confirm">Confirme a senha</string>
     <string name="type">Selecione o tipo</string>
+    <string name="yes_no">Deseja receber agendamento?</string>
 
     <string name="hint_email">Informe o email</string>
     <string name="hint_name">Informe o nome do estabelecimento</string>
@@ -48,6 +49,8 @@
 
     <string name="label_select_type">Selecione o tipo</string>
     <string name="label_description_establishment">Descrição do estabelecimento</string>
+    <string name="label_yes">Sim</string>
+    <string name="label_no">Não</string>
 
 
     <string name="signupregister">Registre-se</string>

@@ -12,7 +12,8 @@ data class Register(var email: String = "",
                     var name: String = "",
                     var typeId: Int = 0,
                     var appName: String = "",
-                    var phoneNumber: String = ""){
+                    var phoneNumber: String = "",
+var scheduling: Boolean = false){
     constructor():this("","","","","","","","","","")
 
 }
