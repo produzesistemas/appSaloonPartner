@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.produzesistemas.appsaloonpartner.model.Establishment
 import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.ResponseBody
 import com.produzesistemas.appsaloonpartner.model.Token
@@ -28,6 +29,7 @@ class LoginViewModel constructor() : ViewModel() {
     val complete = MutableLiveData<Boolean>()
     val msg = MutableLiveData<String>()
     val token = MutableLiveData<Token>()
+    val establishment = MutableLiveData<Establishment>()
     fun setCompleteFalse() {
         complete.value = false
     }
@@ -94,6 +96,35 @@ class LoginViewModel constructor() : ViewModel() {
                     if (response.response.code() == 400) {
                         loading.value = false
                         onError(response.response.errorBody()!!.string(), 400)
+                    }
+                }
+            }
+        }
+    }
+
+    fun getMyAccount(token: String) {
+        loading.value = true
+        viewModelScope.launch {
+            Log.d("Thread Inside", Thread.currentThread().name)
+            when (val response = loginRepository.getMyAccount(token)) {
+                is NetworkState.Success -> {
+                    establishment.postValue(response.data!!)
+                    loading.value = false
+                }
+                is NetworkState.Error -> {
+                    if (response.response.code() == 401) {
+                        loading.value = false
+                        onError("Sessão expirada! Para sua segurança efetue novamente o login.", 401)
+                    }
+
+                    if (response.response.code() == 400) {
+                        loading.value = false
+                        onError("Falha na tentativa.", 400)
+                    }
+
+                    if (response.response.code() == 600) {
+                        loading.value = false
+                        onError("", 600)
                     }
                 }
             }

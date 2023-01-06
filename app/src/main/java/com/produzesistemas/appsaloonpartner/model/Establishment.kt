@@ -5,6 +5,8 @@ data class Establishment(
     var name: String = "",
     var responsible: String = "",
     var cnpj: String = "",
+    var description: String = "",
+    var scheduling: Boolean = false,
     var address: String = "",
     var id: Int = 0) {
 

@@ -1,5 +1,6 @@
 package com.produzesistemas.appsaloonpartner.retrofit
 import com.google.gson.GsonBuilder
+import com.produzesistemas.appsaloonpartner.model.Establishment
 import com.produzesistemas.appsaloonpartner.model.LoginUser
 import com.produzesistemas.appsaloonpartner.model.Register
 import com.produzesistemas.appsaloonpartner.model.Token
@@ -20,6 +21,9 @@ interface RetrofitService {
     @Headers("Content-Type:application/json")
     @POST("account/registerBeauty")
     suspend fun registerUser(@Body register: Register): Response<String>
+
+    @GET("account/myAccountBeauty")
+    suspend fun getMyAccount(@Header("Authorization") token: String): Response<Establishment>
 
     @Headers("Content-Type:application/json")
     @POST("account/recoverPassword")

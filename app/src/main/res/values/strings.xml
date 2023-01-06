@@ -10,6 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_my_account">Minha conta</string>
 
     <string name="action_confirmar">Confirmar</string>
     <string name="action_cancelar">Cancelar</string>
@@ -51,6 +52,14 @@
     <string name="label_description_establishment">Descrição do estabelecimento</string>
     <string name="label_yes">Sim</string>
     <string name="label_no">Não</string>
+    <string name="label_email">Email do responsável</string>
+    <string name="label_name">Nome do estabelecimento</string>
+    <string name="label_type_id">Tipo de estabelecimento</string>
+    <string name="label_responsible">Nome do responsável</string>
+    <string name="label_cnpj">Cnpj</string>
+    <string name="label_address">Endereço</string>
+
+
 
 
     <string name="signupregister">Registre-se</string>
