@@ -21,7 +21,7 @@ import java.util.*
 object MainUtils {
 
     const val IMAGE_QUALITY = 25
-
+    var urlImage = "https://www.produzesistemas.com.br/Files/Establishment/"
 
     val currentDate: Date
         get() = Calendar.getInstance().time

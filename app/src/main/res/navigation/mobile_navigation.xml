@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.produzesistemas.appsaloonpartner.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_my_account"
+        android:name="com.produzesistemas.appsaloonpartner.ui.MyAccount.FragmentMyAccount"
+        android:label="@string/menu_my_account"
+        tools:layout="@layout/fragment_my_account" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.produzesistemas.appsaloonpartner.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+<!--    <fragment-->
+<!--        android:id="@+id/nav_slideshow"-->
+<!--        android:name="com.produzesistemas.appsaloonpartner.ui.slideshow.SlideshowFragment"-->
+<!--        android:label="@string/menu_slideshow"-->
+<!--        tools:layout="@layout/fragment_slideshow" />-->
 </navigation>

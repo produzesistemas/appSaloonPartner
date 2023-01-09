@@ -8,6 +8,8 @@ data class Establishment(
     var description: String = "",
     var scheduling: Boolean = false,
     var address: String = "",
+    var plan: Plan?,
+    var imageName: String = "",
     var id: Int = 0) {
 
     override fun toString(): String {
