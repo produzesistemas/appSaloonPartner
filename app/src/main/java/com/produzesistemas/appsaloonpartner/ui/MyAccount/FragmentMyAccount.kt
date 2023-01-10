@@ -97,11 +97,11 @@ class FragmentMyAccount : Fragment() {
             binding.textViewAddress.text = it.address
             binding.textViewResponsible.text = it.responsible
             binding.textViewDescriptionEstablishment.text = it.description
-            Picasso.get()
-                .load(MainUtils.urlImage + it.imageName)
-                .fit().centerCrop()
-                .into(binding.imageViewEstablisment)
-            loadTypes(it.typeId)
+//            Picasso.get()
+//                .load(MainUtils.urlImage + it.imageName)
+//                .fit().centerCrop()
+//                .into(binding.imageViewEstablisment)
+//            loadTypes(it.typeId)
         })
         loginViewModel.getMyAccount(user.token)
     }
